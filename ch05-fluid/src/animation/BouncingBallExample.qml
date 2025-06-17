@@ -104,6 +104,7 @@ Item {
             to: 720
             duration: root.duration
         }
+        loops: Animation.Infinite
     }
     // <<M3
 

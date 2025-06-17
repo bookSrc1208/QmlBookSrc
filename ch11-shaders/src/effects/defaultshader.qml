@@ -72,3 +72,14 @@ Rectangle {
     }
 }
 // <<M1
+/*
+    uniform-在处理过程中不能够改变的值。
+    attribute-连接外部数据
+    varying-着色器之间的共享数据
+    highp-高精度值
+    lowp-低精度值
+    mat4-4x4浮点数（float）矩阵
+    vec2-包含两个浮点数的向量
+    sampler2D-2D纹理
+    float-浮点数
+*/

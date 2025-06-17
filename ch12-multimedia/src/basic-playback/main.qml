@@ -35,7 +35,7 @@ Item {
 
     MediaPlayer {
         id: player
-        source: "trailer_400p.ogg"
+        source: "trailer_400p.ogg"//11111.mp3
     }
 
     VideoOutput {

@@ -93,9 +93,17 @@ Rectangle {
             property variant source: sourceImage
             property real redChannel: 0.3
             visible: root.step>3
-            NumberAnimation on redChannel {
-                from: 0.0; to: 1.0; loops: Animation.Infinite; duration: 4000
-            }
+
+            SequentialAnimation {
+                  running: true
+                  NumberAnimation {
+                    target: effect4; property:"redChannel";  from: 0.0; to: 1.0; duration: 4000
+                  }
+                  NumberAnimation {
+                    target: effect4; property:"redChannel";  from: 1.0; to: 0.0; duration: 4000
+                  }
+                  loops: Animation.Infinite;
+              }
 
             fragmentShader: "
                 varying highp vec2 qt_TexCoord0;

@@ -33,7 +33,7 @@ Item {
     id: window
     width: background.width
     height: background.height
-
+objectName:"Item1"
     // M1>>
     Image {
         id: background
@@ -45,5 +45,23 @@ Item {
         anchors.bottom: parent.bottom
         source: "images/pole.png"
     }
+    Rectangle{
+        id:rec
+        border.color: "red"
+        width: parent.width
+        height: 20
+        objectName: "Rectangle1"
+
+        MouseArea{
+            anchors.fill: parent
+             objectName: "MouseArea1"
+            onClicked: {
+                //console.log(rec.Rectangle.MouseArea.objectName)
+                console.log(window.Item.objectName)
+
+            }
+        }
+    }
+
     // <<M1
 }

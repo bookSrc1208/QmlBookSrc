@@ -7,6 +7,9 @@ DynamicEntryModel::DynamicEntryModel(QObject *parent)
     m_roleNames[HueRole] = "hue";
     m_roleNames[SaturationRole] = "saturation";
     m_roleNames[BrightnessRole] = "brightness";
+    m_roleNames[RedRole] = "red";
+    m_roleNames[GreenRole] = "green";
+    m_roleNames[BlueRole] = "blue";
 }
 
 DynamicEntryModel::~DynamicEntryModel()
@@ -85,6 +88,15 @@ QVariant DynamicEntryModel::data(const QModelIndex &index, int role) const
     case BrightnessRole:
         // return the brightness of the color (model.brightness)
         return color.lightnessF();
+    case RedRole:
+        // return the red of the color (model.red)
+        return color.red();
+    case GreenRole:
+        // return the green of the color (model.green)
+        return color.green();
+    case BlueRole:
+        // return the blue of the color (model.blue)
+        return color.blue();
     }
     return QVariant();
 }

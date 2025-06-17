@@ -53,6 +53,7 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 var url = canvas.toDataURL('image/png')
+                console.log(url);
                 print('image url=', url)
                 image.source = url
             }

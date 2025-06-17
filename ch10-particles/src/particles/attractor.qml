@@ -73,8 +73,8 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         width: 160; height: 120
         system: particleSystem
-        pointX: 0
-        pointY: 0
+        pointX: x+width
+        pointY: height/2
         strength: 1.0
         Tracer {}
     }

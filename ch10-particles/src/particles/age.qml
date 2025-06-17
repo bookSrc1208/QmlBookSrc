@@ -69,10 +69,11 @@ Rectangle {
 
     // M1>>
     Age {
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: 240; height: 120
+        //anchors.horizontalCenter: parent.horizontalCenter
+        x:200;y:0
+        width: 10; height: 120
         system: particleSystem
-        advancePosition: true
+        advancePosition: false
         lifeLeft: 1200
         once: true
         Tracer {}

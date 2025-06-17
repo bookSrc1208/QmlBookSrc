@@ -54,7 +54,9 @@ Item {
         x: 8; y: 8
         id: container
         Image {
+            //anchors.fill: parent
             id: image
+            //source: "curves/" + "Linear" + ".png"
         }
         Text {
             id: label

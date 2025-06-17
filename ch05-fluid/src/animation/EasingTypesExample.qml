@@ -61,6 +61,7 @@ DarkSquare {
                 onClicked: {
                     // set the easing type on the animation
                     anim.easing.type = modelData
+                    console.log(source.toString())
                     // restart the animation
                     anim.restart()
                 }

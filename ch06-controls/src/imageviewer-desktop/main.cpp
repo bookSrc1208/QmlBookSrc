@@ -9,7 +9,8 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    QQuickStyle::setStyle("Fusion");
+    //QQuickStyle::setStyle("Fusion");
+    QQuickStyle::setStyle("Material");
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;

@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication app(argc, argv);
+    //QCoreApplication app(argc, argv);
 
     // prepare the message
     QString message("Hello World!");

@@ -1,8 +1,9 @@
 // M1>>
 import QtQuick 2.12
+import QtQuick.Controls 1.4
 // <<M1
 import QtQuick.Window 2.0
-import "common"
+import "../common"
 
 Window {
     width: 320

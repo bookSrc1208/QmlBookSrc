@@ -23,5 +23,5 @@ android-no-sdk {
     }
     INSTALLS += target
 }
-
+#importPaths: [ "./plugin" ]
 export(INSTALLS)

@@ -41,13 +41,13 @@ Rectangle {
             top: parent.top
             topMargin: 8
         }
-        property variant activeSquare: red
+        property variant activeSquare: red1
         property color paintColor: "#33B5E5"
         spacing: 4
         Repeater {
             model: ["#33B5E5", "#99CC00", "#FFBB33", "#FF4444"]
             ColorSquare {
-                id: red
+                id: red1
                 color: modelData
                 active: parent.paintColor == color
                 onClicked: {

@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.4
+import QtQuick.Controls 1.5 //as Controls15
+//import QtQuick.Controls 2.4
 import Qt.labs.platform 1.0 as NativeDialogs
 
 ApplicationWindow {
@@ -16,6 +17,8 @@ ApplicationWindow {
     property string _fileName           // The filename of the document
     property bool _tryingToClose: false // Is the window trying to close (but needs a file name first)?
 
+    property alias textarea: textarea1
+
     menuBar: MenuBar {
 
         // ...
@@ -24,26 +27,30 @@ ApplicationWindow {
             title: qsTr("&File")
             MenuItem {
                 text: qsTr("&New")
-                icon.name: "document-new"
+                iconName: "document-new"
                 onTriggered: root.newDocument()
             }
             MenuSeparator {}
             MenuItem {
                 text: qsTr("&Open")
-                icon.name: "document-open"
+                iconName: "document-open"
                 onTriggered: openDocument()
             }
             MenuItem {
                 text: qsTr("&Save")
-                icon.name: "document-save"
+                iconName: "document-save"
                 onTriggered: saveDocument()
             }
             MenuItem {
                 text: qsTr("Save &As...")
-                icon.name: "document-save-as"
+                iconName: "document-save-as"
                 onTriggered: saveAsDocument()
             }
         }
+    }
+    TextArea{
+        id:textarea1
+        anchors.fill: parent
     }
 
     function _createNewDocument()
@@ -93,6 +100,7 @@ ApplicationWindow {
         onAccepted: {
             var window = root._createNewDocument();
             window._fileName = openDialog.file;
+            window.textarea.text = openDialog.file
             window.show();
         }
     }

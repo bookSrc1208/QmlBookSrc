@@ -1,6 +1,9 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.4
+import QtQuick 2.5
+//import QtQuick.Controls 2.4 as Controls22
+import QtQuick.Controls 1.4
+import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
+//import Qt.labs.platform 1.0
 
 ApplicationWindow {
     
@@ -16,7 +19,7 @@ ApplicationWindow {
             title: qsTr("&File")
             MenuItem {
                 text: qsTr("&Open...")
-                icon.name: "document-open"
+                iconName: "document-open"
                 onTriggered: fileOpenDialog.open()
             }
         }
@@ -30,20 +33,22 @@ ApplicationWindow {
         }
     }
 
-    header: ToolBar {
+
+    toolBar: ToolBar {
         Flow {
             anchors.fill: parent
             ToolButton {
                 text: qsTr("Open")
-                icon.name: "document-open"
+
+                iconName: "document-open"
                 onClicked: fileOpenDialog.open()
             }
         }
     }
 
-    background: Rectangle {
-        color: "darkGray"
-    }
+//    background: Rectangle {
+//        color: "darkGray"
+//    }
 
     Image {
         id: image
@@ -72,7 +77,6 @@ ApplicationWindow {
             text: qsTr("QML Image Viewer\nA part of the QmlBook\nhttp://qmlbook.org")
             horizontalAlignment: Text.AlignHCenter
         }
-
         standardButtons: StandardButton.Ok
     }
 

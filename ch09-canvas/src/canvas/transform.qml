@@ -35,7 +35,7 @@ Canvas {
     width: 240; height: 120
     onPaint: {
         var ctx = getContext("2d")
-            var ctx = getContext("2d");
+            //var ctx = getContext("2d");
             ctx.lineWidth = 4;
             ctx.strokeStyle = "blue";
 

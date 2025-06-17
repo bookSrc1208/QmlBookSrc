@@ -43,7 +43,7 @@ Canvas {
     // M2>>
     Timer {
         id: lineTimer
-        interval: 40
+        interval: 400
         repeat: true
         triggeredOnStart: true
         onTriggered: {
@@ -54,7 +54,7 @@ Canvas {
 
     Timer {
         id: blankTimer
-        interval: 50
+        interval: 500
         repeat: true
         triggeredOnStart: true
         onTriggered: {

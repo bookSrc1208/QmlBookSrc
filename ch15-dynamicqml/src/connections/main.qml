@@ -26,6 +26,8 @@
  */
 
 import QtQuick 2.5
+import "create-component.js" as ClickedAnimationCreator
+//import "create-component.js" as clicke11
 
 Rectangle {
     id: container
@@ -144,6 +146,35 @@ Rectangle {
 
         opacity: 0
     }
+//    ClickedAnimation{
+//        id: leftClickedAnimation
+//        target: leftRectangle
+//    }
+//    ClickedAnimation{
+//        id: rightClickedAnimation
+//        target: rightRectangle
+//    }
+//    Component.onCompleted:{
+
+//       ClickedAnimationCreator.createAnimationObject("ClickedAnimation.qml",container, {"id": leftClickedAnimation, "target": leftRectangle});
+//       ClickedAnimationCreator.createAnimationObject("ClickedAnimation.qml",container, {"id": rightClickedAnimation, "target": rightRectangle});
+//    }
+
+    SequentialAnimation {
+        id: clickedAnimation
+        property Item target
+        PropertyAction {
+            target: target
+            property: "color"
+            value: "white"
+        }
+        ColorAnimation {
+            target: target
+            property: "color"
+            to: "green"
+            duration: 3000
+        }
+    }
 
     SequentialAnimation {
         id: leftClickedAnimation
@@ -218,6 +249,10 @@ Rectangle {
     // <<M3
 
     Component.onCompleted: {
+        //ClickedAnimationCreator.createAnimationObject("ClickedAnimation.qml",container, {"id": leftClickedAnimation, "target": leftRectangle});
+        //ClickedAnimationCreator.createAnimationObject("ClickedAnimation.qml",container, {"id": rightClickedAnimation, "target": rightRectangle});
+
         state = "left";
+
     }
 }

@@ -64,7 +64,7 @@ Rectangle {
             angle: 0
             angleVariation: 15
             magnitude: 100
-            magnitudeVariation: 100
+            magnitudeVariation: 50
         }
     }
 

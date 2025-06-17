@@ -46,7 +46,7 @@ Rectangle {
     TextInput {
         id: input2
         x: 8; y: 36
-        width: 96; height: 20
+        width: parent.width; height: 20
         text: "Text Input 2"
     }
 }

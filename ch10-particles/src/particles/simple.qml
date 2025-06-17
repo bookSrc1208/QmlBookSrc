@@ -43,17 +43,28 @@ Rectangle {
         anchors.centerIn: parent
         width: 160; height: 80
         system: particleSystem
-        emitRate: 10
-        lifeSpan: 1000
-        lifeSpanVariation: 500
-        size: 16
-        endSize: 32
+        emitRate: 10//发射 10个/秒
+        lifeSpan: 1000//生命周期 ms
+        lifeSpanVariation: 500//一个已发射粒子的生命周期变化 ms
+        size: 16//开始像素
+        endSize: 32//结束像素
         Tracer { color: 'green' }
     }
 
+//    ImageParticle {
+//        source: "assets/particle.png"
+//        system: particleSystem
+//    }
     ImageParticle {
-        source: "assets/particle.png"
+        source: "assets/star.png"
         system: particleSystem
+        color: '#FFD700'
+        colorVariation: 0.2
+        rotation: 0
+        rotationVariation: 45//角变化幅度 0±45
+        rotationVelocity: 15//角速度
+        rotationVelocityVariation: 15//角速度变化幅度 15±15
+        entryEffect: ImageParticle.Scale
     }
 }
 // <<M1

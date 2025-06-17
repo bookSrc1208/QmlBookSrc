@@ -42,7 +42,7 @@ Rectangle {
         KeyNavigation.tab: input2
     }
 
-    TLineEditV2 {
+    TTextEdit {
         id: input2
         x: 8; y: 36
         text: "Text Input 2"

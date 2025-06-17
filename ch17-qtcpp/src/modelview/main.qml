@@ -39,7 +39,7 @@ Window {
                 delegate: ListDelegate {
                     width: ListView.view.width
                     // construct a string based on the models proeprties
-                    text: 'hsv(' +
+                    text: model.name + ' hsv(' +
                           Number(model.hue).toFixed(2) + ',' +
                           Number(model.saturation).toFixed() + ',' +
                           Number(model.brightness).toFixed() + ')'
@@ -72,7 +72,7 @@ Window {
                     // applied when entry is removed
                     NumberAnimation {
                         properties: "x"; to: view.width;
-                        duration: 250; easing.type: Easing.InBounce
+                        duration: 250; easing.type: Easing.InQuad//InBounce
                     }
                 }
                 displaced: Transition {

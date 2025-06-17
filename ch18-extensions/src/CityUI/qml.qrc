@@ -35,5 +35,6 @@
         <file>flags/22px-Flag_of_Turkey.svg.png</file>
         <file>flags/22px-Flag_of_Vietnam.svg.png</file>
         <file>remove.png</file>
+        <file>CityDialog.qml</file>
     </qresource>
 </RCC>

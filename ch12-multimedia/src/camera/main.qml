@@ -69,7 +69,7 @@ Rectangle {
 
         delegate: Image {
             height: 100
-            source: path
+            source: "file:///"+path //"C:/Users/Pictures/IMG_00000005.jpg"
             fillMode: Image.PreserveAspectFit
         }
 
@@ -93,6 +93,7 @@ Rectangle {
         target: camera.imageCapture
 
         onImageSaved: {
+            //console.log(path);
             imagePaths.append({"path": path})
             listView.positionViewAtEnd();
         }
@@ -152,9 +153,10 @@ Rectangle {
     {
         _imageIndex = i;
 
-        if (_imageIndex >= 0 && _imageIndex < imagePaths.count)
-            image.source = imagePaths.get(_imageIndex).path;
-        else
+        if (_imageIndex >= 0 && _imageIndex < imagePaths.count){
+            image.source ="file:///"+ imagePaths.get(_imageIndex).path;
+            console.log(image.source)
+       } else
             image.source = "";
     }
 

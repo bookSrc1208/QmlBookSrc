@@ -88,6 +88,7 @@ ApplicationWindow {
 
     function jsCall(exp) {
         var data = Util.call(exp);
+        print(data)
         outputModel.insert(0, data)
     }
 }

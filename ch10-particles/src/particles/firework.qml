@@ -33,7 +33,7 @@ Rectangle {
     id: root
     width: 480; height: 240
     color: "#1F1F1F"
-    property bool tracer: false
+    property bool tracer: true
 
     ParticleSystem {
         id: particleSystem
@@ -44,7 +44,7 @@ Rectangle {
         system: particleSystem
         groups: ['smoke']
         source: "assets/particle.png"
-        alpha: 0.3
+        //alpha: 0.3
     }
 
     ImageParticle {
@@ -65,7 +65,7 @@ Rectangle {
         maximumEmitted: 8
         lifeSpan: 4800
         lifeSpanVariation: 400
-        size: 128
+        size: 32
         velocity: AngleDirection { angle: 270; magnitude: 150; magnitudeVariation: 10 }
         acceleration: AngleDirection { angle: 90; magnitude: 50 }
         Tracer { color: 'red'; visible: root.tracer }
@@ -91,6 +91,7 @@ Rectangle {
         system: particleSystem
         threshold: 5
         factor: 0.9
+        Tracer { color: 'white'; visible: root.tracer }
 
     }
 

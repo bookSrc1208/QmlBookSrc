@@ -11,32 +11,38 @@ ApplicationWindow {
     height: 480
     title: qsTr("Image Viewer")
     
-    menuBar: MenuBar {
+    //menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
             MenuItem {
                 text: qsTr("&Open...")
-                icon.name: "document-open"
+                //icon.name: "document-open"
                 onTriggered: fileOpenDialog.open()
             }
         }
 
         Menu {
+            id:help
             title: qsTr("&Help")
             MenuItem {
                 text: qsTr("&About...")
                 onTriggered: aboutDialog.open()
             }
         }
-    }
+    //}
 
     header: ToolBar {
         Flow {
             anchors.fill: parent
             ToolButton {
                 text: qsTr("Open")
-                icon.name: "document-open"
+                //icon.name: "document-open"
                 onClicked: fileOpenDialog.open()
+            }
+            ToolButton {
+                text: qsTr("Help")
+                //icon.name: "document-open"
+                onClicked: help.open()
             }
         }
     }
@@ -64,7 +70,7 @@ ApplicationWindow {
         }
     }
 
-    Dialog {
+    MessageDialog {
         id: aboutDialog
         title: qsTr("About")
         Label {
@@ -73,7 +79,8 @@ ApplicationWindow {
             horizontalAlignment: Text.AlignHCenter
         }
 
-        standardButtons: StandardButton.Ok
+        //standardButtons: StandardButton.Ok
+        buttons: MessageDialog.Ok.Ok
     }
 
     // ...

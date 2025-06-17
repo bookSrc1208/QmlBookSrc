@@ -23,6 +23,8 @@ void FileIO::read()
         QTextStream stream(&file);
         m_text = stream.readAll();
         emit textChanged(m_text);
+        //QDataStream dstream(&file);
+        //dstream.re
     }
 }
 

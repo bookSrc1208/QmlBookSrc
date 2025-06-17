@@ -37,9 +37,13 @@ Canvas {
 
         var gradient = ctx.createLinearGradient(100,0,100,200)
         gradient.addColorStop(0, "blue")
-        gradient.addColorStop(0.5, "lightsteelblue")
+        gradient.addColorStop(0.5, "yellow")
         ctx.fillStyle = gradient
-        ctx.fillRect(50,50,100,100)
+//        ctx.fillRect(50,50,100,100)
+
+         ctx.fillRect(0,0,300,300)
+        ctx.strokeStyle = "red"
+        ctx.strokeRect(50,50,100,100);
     }
     // <<M1
 }

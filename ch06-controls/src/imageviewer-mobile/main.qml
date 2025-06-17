@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.4
+import QtQuick.Controls 2.4 as Controls14
+import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Material 2.1
 
@@ -31,20 +32,58 @@ ApplicationWindow {
                 highlighted: ListView.isCurrentItem
                 onClicked: {
                     drawer.close()
-                    model.triggered()
+                    //model.triggered()
+                    //lst.triggered(index);
+
+                    switch (index){
+                    case 0:
+                        fileOpenDialog.open();
+                        break;
+                     case 1:
+                         aboutDialog.open();
+                         break;
+                     default:
+                         ;
+                    }
                 }
             }
 
             model: ListModel {
+                id:lst
                 ListElement {
                     text: qsTr("Open...")
-                    triggered: function(){ fileOpenDialog.open(); }
+//                    MouseArea{
+//                        anchors.fill: parent
+//                        onClicked: function(){ fileOpenDialog.open(); }
+//                    }
+
+
+                    function  triggered1(){ fileOpenDialog.open(); }
                 }
                 ListElement {
                     text: qsTr("About...")
-                    triggered: function(){ aboutDialog.open(); }
+//                    MouseArea{
+//                        anchors.fill: parent
+//                        onClicked: function(){ aboutDialog.open(); }
+//                    }
+                    //triggered: function(){ aboutDialog.open(); }
+                    function  triggered(){ fileOpenDialog.open(); }
                 }
             }
+
+            function  triggered(index){
+                switch (index){
+                case 0:
+                    fileOpenDialog.open();
+                    break;
+                 case 1:
+                     aboutDialog.open();
+                     break;
+                 default:
+                     ;
+                }
+            }
+
 
             ScrollIndicator.vertical: ScrollIndicator { }
         }
@@ -53,11 +92,11 @@ ApplicationWindow {
     header: ToolBar {
         Material.background: Material.Orange
 
-        ToolButton {
+        Controls14.ToolButton {
             id: menuButton
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            icon.source: "images/baseline-menu-24px.svg"
+            iconSource: "images/baseline-menu-24px.svg"
             onClicked: drawer.open()
         }
         Label {

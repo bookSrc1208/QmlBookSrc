@@ -46,7 +46,8 @@ Item {
         CreateObject.create("rocket.qml", root, itemAdded);
     }
 
-    function itemAdded(obj, source) {
+    function itemAdded(obj, source) {//obj 是生成的item对象 var obj = _component.createObject(_parent);
+        //print(source);//ufo.qml rocket.qml
         objectsModel.append({"obj": obj, "source": source})
     }
 // <<M1
@@ -73,7 +74,7 @@ Item {
         }
 
         res += "</scene>";
-
+    print(res);
         return res;
     }
 // <<M3
@@ -141,11 +142,17 @@ Item {
             height: 40
 
             color: "#53d769"
+            Text {
+                anchors.centerIn: parent
+                id: name1
+                text: qsTr("clearItems")
+            }
 
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
                     xmlModel.xml = serialize();
+
                     clearItems();
                 }
             }
@@ -158,6 +165,11 @@ Item {
             height: 40
 
             color: "#fed958"
+            Text {
+                anchors.centerIn: parent
+                id: name2
+                text: qsTr("deserialize")
+            }
 
             MouseArea {
                 anchors.fill: parent

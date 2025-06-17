@@ -47,7 +47,7 @@ Rectangle {
             property real amplitude: 0.1
             property real time: 0.0
             NumberAnimation on time {
-                from: 0; to: Math.PI*2; duration: 1000; loops: Animation.Infinite
+                from: 0; to: Math.PI*2; duration: 4000; loops: Animation.Infinite
             }
 
             fragmentShader: "

@@ -27,7 +27,7 @@
 
 // shadow.qml
 
-import QtQuick 2.5
+import QtQuick 2.9
 
 Canvas {
     id: canvas
@@ -53,7 +53,7 @@ Canvas {
 
         // M3>>
         // render green text
-        ctx.font = 'bold 80px Ubuntu';
+        ctx.font = 'bold 80px 宋体';
         ctx.fillStyle = "#24d12e";
         ctx.fillText("Canvas!",30,180);
         // <<M3

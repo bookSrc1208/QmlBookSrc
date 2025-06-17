@@ -45,20 +45,24 @@ Image {
         source: "assets/box_green.png"
 
         NumberAnimation on x {
+            from: root.padding;
             to: root.width - box.width - root.padding
             duration: root.duration
             running: root.running
+            loops: Animation.Infinite
         }
         RotationAnimation on rotation {
+            from:0
             to: 360
             duration: root.duration
             running: root.running
+            loops: Animation.Infinite
         }
     }
 
     MouseArea {
         anchors.fill: parent
-        onClicked: root.running = true
+        onClicked: root.running = !root.running
     }
 
 }

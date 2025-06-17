@@ -46,7 +46,7 @@ Canvas {
             for (var j=0;j<3;j++) {
                 ctx.save();
                 ctx.strokeStyle = "#9CFF00";
-                ctx.translate(20+j*50,20+i*50);
+                ctx.translate(50+j*80,50+i*80);
                 drawSpirograph(ctx,20*(j+2)/(j+1),-8*(i+3)/(i+1),10);
                 ctx.restore();
             }

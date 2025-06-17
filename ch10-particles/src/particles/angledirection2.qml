@@ -65,6 +65,7 @@ Rectangle {
             angle: -45
             angleVariation: 0
             magnitude: 100
+            //magnitudeVariation: 10
         }
         acceleration: AngleDirection {
             angle: 90

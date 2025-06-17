@@ -13,7 +13,10 @@ public:
         NameRole = Qt::UserRole,
         HueRole = Qt::UserRole+2,
         SaturationRole = Qt::UserRole+3,
-        BrightnessRole = Qt::UserRole+4
+        BrightnessRole = Qt::UserRole+4,
+        RedRole = Qt::UserRole+5,
+        GreenRole = Qt::UserRole+6,
+        BlueRole = Qt::UserRole+7
     };
 
     explicit DynamicEntryModel(QObject *parent = 0);
